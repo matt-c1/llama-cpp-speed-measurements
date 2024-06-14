@@ -52,6 +52,9 @@ That's my experience! I don't know why. With Exl2, it seems using FA has no down
 I wish I knew why. As a dirty fix, would it be possible to add an option to llama.cpp to process prompts with FA, then for token generation not use FA? I don't know if that makes sense.
 
 # Details
+## But what about different quants?!
+I tested `IQ2_XXS`, `IQ4_NL`, `Q4_K_S`, and `Q8_0`. **On my PC** the speed differences between these are very small, not interesting at all to talk about. Smaller quants are slightly faster. "I-Quants" have practically the same speed as "non-I Quants" of the same size.
+
 ## Raw Data
 In `.csv` files in the repo.
 
