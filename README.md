@@ -1,7 +1,9 @@
 # llama-cpp-speed-measurements
-Performance measurements of llama.cpp and exllamav2 on my machine. So **all results and statements here apply to my PC only** and applicability to other setups will vary.
+Performance measurements of llama.cpp and exllamav2 on my machine. So **all results and statements here apply to my PC only** and applicability to other setups will vary. Not only speed values, but the whole **trends** may vary GREATLY with hardware. As in, maybe on your machine llama.cpp will be much faster than exllamav2, or maybe FA will slow down exl2, or maybe FA will speed up lcpp's generation.
 
-The speed trends may vary GREATLY with hardware. I use Linux and have an Nvidia RTX 4090, 10700k, dual channel 3200 MT/s DDR4 RAM, XMP enabled. My results might be applicable to other systems with a fast RTX GPU and a less fast CPU & RAM. If you have faster RAM, or a faster CPU, or a slower GPU, your results could differ a lot. Could also differ on other operating systems, and may change with future software updates and optimizations. And I'm sure it's different for AMD or Intel cards.
+My specs: Linux, Nvidia RTX 4090, 10700k, dual channel 3200 MT/s DDR4 RAM, XMP enabled.
+
+My results might be applicable to other systems with a fast RTX GPU and a less fast CPU & RAM. If you have faster RAM, or a faster CPU, or a slower GPU, your results could differ a lot. Could also differ on other operating systems, and may change with future software updates and optimizations. And I'm sure it's different for AMD or Intel cards.
 
 # General Methodology
 I used [oobabooga's Text Generation WebUI](https://github.com/oobabooga/text-generation-webui)'s API to measure speed. ([Why?](#generation-methods))
