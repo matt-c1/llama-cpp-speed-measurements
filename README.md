@@ -9,7 +9,10 @@ My results might be applicable to other systems with a fast RTX GPU and a less f
 I used [oobabooga's Text Generation WebUI](https://github.com/oobabooga/text-generation-webui)'s API to measure speed. ([Why?](#generation-methods))
 I used two models: [bartowski/Meta-Llama-3-8B-Instruct-GGUF Q8_0](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF) and [bartowski/Meta-Llama-3-8B-Instruct-exl2 8 bpw](https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-exl2).
 
-Here are the library versions I used: [link to commit.](https://github.com/oobabooga/text-generation-webui/blob/bd7cc4234d0d2cc890c5e023f67741615c44484a/requirements.txt)
+~~Here are the library versions I used: [link to commit.](https://github.com/oobabooga/text-generation-webui/blob/bd7cc4234d0d2cc890c5e023f67741615c44484a/requirements.txt)~~
+
+Following a suggestion, I updated to [this commit](https://github.com/oobabooga/text-generation-webui/blob/9420973/requirements.txt) which resulted in speedups for exl2 with **no** Flash Attention, but no other changes and no new conclusions. I only repeated the exl2 measurements as re-doing the 32 data points takes 5 minutes, vs many hours for the 300+ GGUF data points. Partially because lcpp is slower, partially because it's less consistent and I need to re-do same measurement 5 or more times, and mostly because there's more settings I varied with lcpp.
+
 Under the hood, WebUI used [exllamav2](https://github.com/turboderp/exllamav2) and **exl2** files, and [llama-cpp-python](https://github.com/abetlen/llama-cpp-python), which in turn uses [llama.cpp](https://github.com/ggerganov/llama.cpp/) and **GGUF** files.
 
 I measured prompt processing and token generation speed:
