@@ -32,7 +32,7 @@ Total time of processing a prompt of a given length vs the prompt length.
 Latency (inverse of speed), in milliseconds per token, when generating a 256-token response for a given prompt length.
 <img src="./plots/token_generation.svg">
 ## Main conclusions:
-- For llama.cpp, Flash Attention **slows down** generation speed, in some cases significantly.
+- For llama.cpp, Flash Attention **slows down** generation speed, in some cases significantly. Except: if KV cache and almost all layers are in VRAM, it might offer a tiny speedup.
 - For exllamav2, Flash Attention significantly speeds it up.
 - With FA, exl2 is much faster than llama.cpp, even at full GPU offload.
 - Without FA, exl2 can be slower than llama.cpp for long prompts, but in exl2's case using FA does not have a single downside I could notice.
